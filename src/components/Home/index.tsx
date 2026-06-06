@@ -21,10 +21,6 @@ const AMAZON_URL =
   "https://www.amazon.com/Electronic-Circuits-Fundamentals-Mathcad-Examples/dp/B0CJKL2N47/";
 const TOC_PDF_URL =
   "https://ambitious-reward-466c838693.media.strapiapp.com/Electronic_Circuits_TOC_55a9670cb1.pdf";
-const SAMPLE_CH5_URL =
-  "https://ambitious-reward-466c838693.media.strapiapp.com/Sample_chapter_Chapter_5_d4e57dcd4b.pdf";
-const MATHCAD_ZIP_URL =
-  "https://ambitious-reward-466c838693.media.strapiapp.com/Chapter_06_OPERATIONAL_AMPLIFIERS_4ce4be0012.pptx";
 
 const SHARE_BASE = "https://electronic-circuits.com/download-book/";
 const SOCIAL_LINKS: { label: string; href: string }[] = [
@@ -119,41 +115,43 @@ const CHAPTERS: {
     title: "Bipolar Junction Transistor (BJT)",
     figures: 58,
     examples: 16,
-    pages: 59,
+    pages: 70,
   },
   {
     num: "2",
     title: "Field Effect Transistor (FET)",
     figures: 41,
     examples: 12,
-    pages: 47,
+    pages: 48,
   },
   {
     num: "3",
     title: "Multi-stage Amplifiers",
     figures: 41,
     examples: 12,
-    pages: 28,
+    pages: 32,
   },
   {
     num: "4",
     title: "Basic Building Blocks for Integrated Circuit Amplifiers",
     figures: 44,
     examples: 8,
-    pages: 34,
+    pages: 36,
   },
   {
     num: "5",
     title: "Differential Amplifiers",
     figures: 24,
     examples: 6,
-    pages: 22,
+    pages: 25,
   },
-  { num: "6", title: "Op-amp", figures: 23, examples: 4, pages: 17 },
-  { num: "7", title: "Power Amp", figures: 27, examples: 5, pages: 22 },
-  { num: "8", title: "Freq Response", figures: 43, examples: 6, pages: 24 },
-  { num: "9", title: "FB", figures: 33, examples: 15, pages: 36 },
-  { num: "Appendices", title: "", figures: 3, examples: 2, pages: 8 },
+  { num: "6", title: "Op-amp", figures: 23, examples: 4, pages: 19 },
+  { num: "7", title: "Power Amp", figures: 27, examples: 5, pages: 23 },
+  { num: "8", title: "Freq Response", figures: 43, examples: 6, pages: 28 },
+  { num: "9", title: "FB", figures: 33, examples: 15, pages: 58 },
+  { num: "Appendices", title: "", figures: 0, examples: 0, pages: 32 },
+  { num: "Bibliography", title: "", figures: 0, examples: 0, pages: 1 },
+  { num: "Index", title: "", figures: 0, examples: 0, pages: 3 },
 ];
 
 const TOTALS = {
@@ -501,7 +499,7 @@ export default function BookLanding() {
                     <span
                       class="font-mono text-sm font-bold"
                       style={
-                        ch.num === "Appendices"
+                        ch.title === ""
                           ? "display:inline-block; padding:2px 8px; border-radius:4px; background:rgba(212,35,110,0.18); color:var(--magenta); font-size:0.7rem;"
                           : "color: var(--magenta);"
                       }

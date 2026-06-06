@@ -787,20 +787,14 @@ export default function BookLanding() {
 
           {/* Bio card */}
           <div
-            class="book-card grid md:grid-cols-2 overflow-hidden rounded-2xl mb-5"
+            class="book-card grid md:grid-cols-2 overflow-hidden rounded-2xl"
             style="background: var(--surface);"
           >
+            {/* Left — bio */}
             <div
-              class="relative min-h-56 md:min-h-auto"
-              style="background: linear-gradient(135deg, #130d1e 0%, #2a0f1f 100%); display:flex; align-items:center; justify-content:center;"
+              class="p-10 flex flex-col justify-center md:border-r"
+              style="border-color: rgba(255,255,255,0.06);"
             >
-              <div
-                class="absolute inset-0"
-                style="background: linear-gradient(to right, transparent 55%, var(--surface));"
-              />
-            </div>
-
-            <div class="p-10 flex flex-col justify-center">
               <p
                 class="text-xs font-semibold uppercase tracking-widest mb-4"
                 style="color: var(--magenta)"
@@ -849,21 +843,23 @@ export default function BookLanding() {
                 </a>
               </div>
             </div>
-          </div>
 
-          {/* Credential chips */}
-          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            <For each={AUTHOR_CREDENTIALS}>
-              {(c) => (
-                <div
-                  class="book-card flex items-start gap-3 px-5 py-4 rounded-xl"
-                  style="background: var(--surface);"
-                >
-                  <span class="text-xl shrink-0 mt-0.5">{c.icon}</span>
-                  <p class="text-slate-300 text-sm leading-relaxed">{c.text}</p>
-                </div>
-              )}
-            </For>
+            {/* Right — credential chips */}
+            <div class="p-10 flex flex-col justify-center gap-3">
+              <For each={AUTHOR_CREDENTIALS}>
+                {(c) => (
+                  <div
+                    class="flex items-start gap-3 px-4 py-3 rounded-xl"
+                    style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);"
+                  >
+                    <span class="text-lg shrink-0 mt-0.5">{c.icon}</span>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                      {c.text}
+                    </p>
+                  </div>
+                )}
+              </For>
+            </div>
           </div>
         </div>
       </section>

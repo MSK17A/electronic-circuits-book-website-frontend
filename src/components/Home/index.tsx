@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/card";
 
 import { scrollTo } from "@/components/Navbar";
-import useHomeData from "./homeData-hook";
 import "./styles.css";
 import UploadedFiles from "./uploaded-files";
 import { getHomepage } from "~/lib/quiries";
@@ -255,7 +254,6 @@ const COL_GRID = "grid-template-columns: 110px 1fr 130px 140px 120px;";
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function BookLanding() {
-  // const { homePageData } = useHomeData();
   const [formSent, setFormSent] = createSignal(false);
   const [contactName, setContactName] = createSignal("");
   const [contactEmail, setContactEmail] = createSignal("");

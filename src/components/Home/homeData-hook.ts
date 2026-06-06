@@ -1,6 +1,7 @@
-import { createSignal, onMount } from "solid-js";
+import { createResource, createSignal, onMount } from "solid-js";
 import { apiClient } from "~/lib/api-client";
 import { HomePageData, HomePageDataResponse } from "./home-types";
+import { getHomepage } from "~/lib/quiries";
 
 export default function useHomeData() {
   const [homePageData, setHomePageData] = createSignal<HomePageData>();

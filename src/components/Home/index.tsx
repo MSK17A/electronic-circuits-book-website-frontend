@@ -1,4 +1,4 @@
-import { createSignal, For, Show } from "solid-js";
+import { createResource, createSignal, For, Show } from "solid-js";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -13,6 +13,7 @@ import { scrollTo } from "@/components/Navbar";
 import useHomeData from "./homeData-hook";
 import "./styles.css";
 import UploadedFiles from "./uploaded-files";
+import { getHomepage } from "~/lib/quiries";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -164,7 +165,7 @@ const TOTALS = {
 const STAT_PILLS: { value: string; label: string }[] = [
   { value: "337", label: "Figures" },
   { value: "86", label: "Examples" },
-  { value: "297", label: "Pages" },
+  { value: "375", label: "Pages" },
   { value: "9", label: "Chapters" },
 ];
 
@@ -254,11 +255,12 @@ const COL_GRID = "grid-template-columns: 110px 1fr 130px 140px 120px;";
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function BookLanding() {
-  const { homePageData } = useHomeData();
+  // const { homePageData } = useHomeData();
   const [formSent, setFormSent] = createSignal(false);
   const [contactName, setContactName] = createSignal("");
   const [contactEmail, setContactEmail] = createSignal("");
   const [contactMsg, setContactMsg] = createSignal("");
+  const [homePageData] = createResource(getHomepage);
 
   const handleContactSubmit = (e: Event) => {
     e.preventDefault();
@@ -459,7 +461,7 @@ export default function BookLanding() {
       <section id="chapters" class="py-24 px-6" style="background: #0b0f1f">
         <div class="max-w-5xl mx-auto">
           <div class="text-center mb-16">
-            <SectionLabel>Table of Contents</SectionLabel>
+            <SectionLabel>Contents</SectionLabel>
             <h2
               class="text-4xl md:text-5xl mb-4"
               style="font-family:'Playfair Display',serif"
@@ -724,7 +726,7 @@ export default function BookLanding() {
                   >
                     <CardHeader>
                       {/* 5 stars — all Strapi reviews are treated as 5-star */}
-                      <Stars count={5} />
+                      <Stars count={t.rating} />
                       <CardTitle
                         class="text-white text-base font-semibold mt-3"
                         style="font-family:'Playfair Display',serif"
@@ -738,15 +740,28 @@ export default function BookLanding() {
                       </p>
                     </CardContent>
                     <CardFooter>
-                      <div class="flex items-center gap-3">
-                        <div class="avatar-chip">
-                          {initials(t.reviewerName)}
+                      <div class="flex items-center justify-between w-full">
+                        <div class="flex items-center gap-3">
+                          <div class="avatar-chip">
+                            {initials(t.reviewerName)}
+                          </div>
+                          <div>
+                            <p class="text-white text-sm font-semibold">
+                              {t.reviewerName}
+                            </p>
+                          </div>
                         </div>
-                        <div>
-                          <p class="text-white text-sm font-semibold">
-                            {t.reviewerName}
-                          </p>
-                        </div>
+                        <Show when={t.source}>
+                          <a
+                            href={t.sourceUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-xs px-2.5 py-1 rounded-full font-medium"
+                            style="background: rgba(212,35,110,0.12); color: var(--magenta); border: 1px solid rgba(212,35,110,0.25);"
+                          >
+                            {t.source}
+                          </a>
+                        </Show>
                       </div>
                     </CardFooter>
                   </Card>

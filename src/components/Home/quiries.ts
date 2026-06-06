@@ -1,5 +1,5 @@
 // src/lib/queries.ts
-import { sanity } from "./sanity";
+import { sanity } from "../../lib/sanity";
 
 export async function getHomepage() {
   const homePageQuery = `

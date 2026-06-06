@@ -61,17 +61,6 @@ export default function UploadedFiles(props: Props) {
 
   return (
     <div>
-      <p
-        class="text-xs font-semibold uppercase tracking-widest mb-3"
-        style="color: var(--magenta)"
-      >
-        Lecture Slides
-      </p>
-      <p class="text-slate-400 text-sm leading-relaxed mb-5">
-        Download the PowerPoint lecture slides for each chapter — free with
-        every purchase.
-      </p>
-
       <Show
         when={(props.files ?? []).length > 0}
         fallback={
@@ -101,14 +90,6 @@ export default function UploadedFiles(props: Props) {
                         "rgba(255,255,255,0.03)")
                     }
                   >
-                    {/* Chapter number badge */}
-                    <span
-                      class="shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold"
-                      style="background: rgba(212,35,110,0.15); color: var(--magenta);"
-                    >
-                      {chapterNum}
-                    </span>
-
                     {/* Icon + name */}
                     <span class="text-lg shrink-0">{fileIcon(file.ext)}</span>
                     <div class="flex-1 min-w-0">

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@kobalte/core": "^0.13.11",
+    "@sanity/client": "^7.22.1",
     "@tailwindcss/postcss": "^4.1.13",
     "@tanstack/router-plugin": "^1.131.35",
     "@tanstack/solid-router": "^1.131.35",

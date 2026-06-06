@@ -629,7 +629,7 @@ export default function BookLanding() {
               Free <span class="gradient-text italic">resources</span>
             </h2>
             <p class="text-slate-400 max-w-xl mx-auto">
-              Sample chapters, lecture slides, and Mathcad programs — all free.
+              Sample chapter, lecture slides, and Mathcad programs — all free.
             </p>
           </div>
 
@@ -637,56 +637,6 @@ export default function BookLanding() {
             class="book-card rounded-2xl p-10 flex flex-col gap-4"
             style="background: var(--surface);"
           >
-            <p
-              class="text-xs font-semibold uppercase tracking-widest mb-2"
-              style="color: var(--magenta)"
-            >
-              Free Sample Downloads
-            </p>
-            <a href={SAMPLE_CH5_URL} target="_blank" rel="noopener noreferrer">
-              <div
-                class="book-card flex items-center gap-4 px-4 py-3 rounded-xl cursor-pointer"
-                style="background: rgba(255,255,255,0.03);"
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.background = "rgba(212,35,110,0.06)")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.background = "rgba(255,255,255,0.03)")
-                }
-              >
-                <span class="text-lg">📄</span>
-                <div class="flex-1 min-w-0">
-                  <p class="text-slate-200 text-sm font-medium">
-                    Chapter 5: Differential Amplifiers
-                  </p>
-                  <p class="text-slate-500 text-xs">Free sample — PDF</p>
-                </div>
-                <span class="text-slate-600 text-sm">↓</span>
-              </div>
-            </a>
-            <a href={MATHCAD_ZIP_URL} target="_blank" rel="noopener noreferrer">
-              <div
-                class="book-card flex items-center gap-4 px-4 py-3 rounded-xl cursor-pointer"
-                style="background: rgba(255,255,255,0.03);"
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.background = "rgba(212,35,110,0.06)")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.background = "rgba(255,255,255,0.03)")
-                }
-              >
-                <span class="text-lg">🗜️</span>
-                <div class="flex-1 min-w-0">
-                  <p class="text-slate-200 text-sm font-medium">
-                    Mathcad Programs
-                  </p>
-                  <p class="text-slate-500 text-xs">
-                    All worked examples — ZIP
-                  </p>
-                </div>
-                <span class="text-slate-600 text-sm">↓</span>
-              </div>
-            </a>
             <UploadedFiles files={homePageData()?.uploadedFiles} />
           </div>
         </div>

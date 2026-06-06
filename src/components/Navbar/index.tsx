@@ -70,7 +70,7 @@ export default function Navbar() {
             onMouseLeave={(e) =>
               (e.currentTarget.style.background = "var(--magenta)")
             }
-            onClick={() => scrollTo("#download")}
+            onClick={() => scrollTo("#buy")}
           >
             Get the Book
           </Button>

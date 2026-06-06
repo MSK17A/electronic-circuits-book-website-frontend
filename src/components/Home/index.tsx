@@ -291,7 +291,7 @@ export default function BookLanding() {
               {homePageData()?.description}
             </p>
             <div class="flex flex-wrap gap-3">
-              <MagentaBtn size="lg" onClick={() => scrollTo("#download")}>
+              <MagentaBtn size="lg" onClick={() => scrollTo("#buy")}>
                 Get the Book
               </MagentaBtn>
             </div>
@@ -544,8 +544,81 @@ export default function BookLanding() {
         </div>
       </section>
 
-      {/* ── Downloads ──────────────────────────────────────────────────────── */}
-      <section id="download" class="py-24 px-6" style="background: #0e101a">
+      {/* ── Buy the Book ─────────────────────────────────────────────────── */}
+      <section id="buy" class="py-24 px-6" style="background: #0e101a">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-16">
+            <SectionLabel>Get Your Copy</SectionLabel>
+            <h2
+              class="text-4xl md:text-5xl mb-4"
+              style="font-family:'Playfair Display',serif"
+            >
+              Buy the <span class="gradient-text italic">book</span>
+            </h2>
+            <p class="text-slate-400 max-w-xl mx-auto">
+              Available on Amazon worldwide.
+            </p>
+          </div>
+
+          <div
+            class="book-card rounded-2xl p-10 flex flex-col gap-6"
+            style="background: var(--surface);"
+          >
+            <div>
+              <p
+                class="text-xs font-semibold uppercase tracking-widest mb-2"
+                style="color: var(--magenta)"
+              >
+                Buy the Book
+              </p>
+              <h3
+                class="text-2xl font-bold mb-1"
+                style="font-family:'Playfair Display',serif"
+              >
+                Electronic Circuit Fundamentals
+              </h3>
+              <p class="text-slate-500 text-sm">
+                with Mathcad Examples — A-Imam Al-Sammak
+              </p>
+            </div>
+            <MagentaBtn href={AMAZON_URL} class="px-8 w-fit">
+              🛒 Buy Now on Amazon
+            </MagentaBtn>
+
+            <div>
+              <p class="text-xs text-slate-500 uppercase tracking-widest mb-3">
+                Share
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <For each={SOCIAL_LINKS}>
+                  {(s) => (
+                    <a
+                      href={s.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-xs px-3 py-1.5 rounded font-medium text-slate-300 transition-colors"
+                      style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08);"
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.borderColor =
+                          "rgba(212,35,110,0.4)")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.borderColor =
+                          "rgba(255,255,255,0.08)")
+                      }
+                    >
+                      {s.label}
+                    </a>
+                  )}
+                </For>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Downloads ─────────────────────────────────────────────────────── */}
+      <section id="download" class="py-24 px-6" style="background: #0b0f1f">
         <div class="max-w-5xl mx-auto">
           <div class="text-center mb-16">
             <SectionLabel>Downloads</SectionLabel>
@@ -553,149 +626,68 @@ export default function BookLanding() {
               class="text-4xl md:text-5xl mb-4"
               style="font-family:'Playfair Display',serif"
             >
-              Get your <span class="gradient-text italic">copy</span>
+              Free <span class="gradient-text italic">resources</span>
             </h2>
             <p class="text-slate-400 max-w-xl mx-auto">
-              Buy on Amazon or grab free sample downloads before you commit.
+              Sample chapters, lecture slides, and Mathcad programs — all free.
             </p>
           </div>
 
           <div
-            class="book-card overflow-hidden rounded-2xl grid md:grid-cols-2"
+            class="book-card rounded-2xl p-10 flex flex-col gap-4"
             style="background: var(--surface);"
           >
-            {/* Left — buy + share */}
-            <div
-              class="p-10 flex flex-col gap-6 md:border-r"
-              style="border-color: rgba(255,255,255,0.06);"
+            <p
+              class="text-xs font-semibold uppercase tracking-widest mb-2"
+              style="color: var(--magenta)"
             >
-              <div>
-                <p
-                  class="text-xs font-semibold uppercase tracking-widest mb-2"
-                  style="color: var(--magenta)"
-                >
-                  Buy the Book
-                </p>
-                <h3
-                  class="text-2xl font-bold mb-1"
-                  style="font-family:'Playfair Display',serif"
-                >
-                  Electronic Circuit Fundamentals
-                </h3>
-                <p class="text-slate-500 text-sm">
-                  with Mathcad Examples — A-Imam Al-Sammak
-                </p>
-              </div>
-              <MagentaBtn href={AMAZON_URL} class="px-8 w-fit">
-                🛒 Buy Now on Amazon
-              </MagentaBtn>
-
-              <div>
-                <p class="text-xs text-slate-500 uppercase tracking-widest mb-3">
-                  Share
-                </p>
-                <div class="flex flex-wrap gap-2">
-                  <For each={SOCIAL_LINKS}>
-                    {(s) => (
-                      <a
-                        href={s.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-xs px-3 py-1.5 rounded font-medium text-slate-300 transition-colors"
-                        style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08);"
-                        onMouseEnter={(e) =>
-                          (e.currentTarget.style.borderColor =
-                            "rgba(212,35,110,0.4)")
-                        }
-                        onMouseLeave={(e) =>
-                          (e.currentTarget.style.borderColor =
-                            "rgba(255,255,255,0.08)")
-                        }
-                      >
-                        {s.label}
-                      </a>
-                    )}
-                  </For>
+              Free Sample Downloads
+            </p>
+            <a href={SAMPLE_CH5_URL} target="_blank" rel="noopener noreferrer">
+              <div
+                class="book-card flex items-center gap-4 px-4 py-3 rounded-xl cursor-pointer"
+                style="background: rgba(255,255,255,0.03);"
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.background = "rgba(212,35,110,0.06)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.background = "rgba(255,255,255,0.03)")
+                }
+              >
+                <span class="text-lg">📄</span>
+                <div class="flex-1 min-w-0">
+                  <p class="text-slate-200 text-sm font-medium">
+                    Chapter 5: Differential Amplifiers
+                  </p>
+                  <p class="text-slate-500 text-xs">Free sample — PDF</p>
                 </div>
+                <span class="text-slate-600 text-sm">↓</span>
               </div>
-            </div>
-
-            {/* Right — lecture slides from Strapi */}
-            <div
-              class="p-10 flex flex-col gap-6 overflow-y-auto"
-              style="max-height: 560px;"
-            >
-              {/* Static samples */}
-              <div>
-                <p
-                  class="text-xs font-semibold uppercase tracking-widest mb-3"
-                  style="color: var(--magenta)"
-                >
-                  Free Sample Downloads
-                </p>
-                <div class="flex flex-col gap-2 mb-6">
-                  <a
-                    href={SAMPLE_CH5_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <div
-                      class="book-card flex items-center gap-4 px-4 py-3 rounded-xl cursor-pointer"
-                      style="background: rgba(255,255,255,0.03);"
-                      onMouseEnter={(e) =>
-                        (e.currentTarget.style.background =
-                          "rgba(212,35,110,0.06)")
-                      }
-                      onMouseLeave={(e) =>
-                        (e.currentTarget.style.background =
-                          "rgba(255,255,255,0.03)")
-                      }
-                    >
-                      <span class="text-lg">📄</span>
-                      <div class="flex-1 min-w-0">
-                        <p class="text-slate-200 text-sm font-medium">
-                          Chapter 5: Differential Amplifiers
-                        </p>
-                        <p class="text-slate-500 text-xs">Free sample — PDF</p>
-                      </div>
-                      <span class="text-slate-600 text-sm">↓</span>
-                    </div>
-                  </a>
-                  <a
-                    href={MATHCAD_ZIP_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <div
-                      class="book-card flex items-center gap-4 px-4 py-3 rounded-xl cursor-pointer"
-                      style="background: rgba(255,255,255,0.03);"
-                      onMouseEnter={(e) =>
-                        (e.currentTarget.style.background =
-                          "rgba(212,35,110,0.06)")
-                      }
-                      onMouseLeave={(e) =>
-                        (e.currentTarget.style.background =
-                          "rgba(255,255,255,0.03)")
-                      }
-                    >
-                      <span class="text-lg">🗜️</span>
-                      <div class="flex-1 min-w-0">
-                        <p class="text-slate-200 text-sm font-medium">
-                          Mathcad Programs
-                        </p>
-                        <p class="text-slate-500 text-xs">
-                          All worked examples — ZIP
-                        </p>
-                      </div>
-                      <span class="text-slate-600 text-sm">↓</span>
-                    </div>
-                  </a>
+            </a>
+            <a href={MATHCAD_ZIP_URL} target="_blank" rel="noopener noreferrer">
+              <div
+                class="book-card flex items-center gap-4 px-4 py-3 rounded-xl cursor-pointer"
+                style="background: rgba(255,255,255,0.03);"
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.background = "rgba(212,35,110,0.06)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.background = "rgba(255,255,255,0.03)")
+                }
+              >
+                <span class="text-lg">🗜️</span>
+                <div class="flex-1 min-w-0">
+                  <p class="text-slate-200 text-sm font-medium">
+                    Mathcad Programs
+                  </p>
+                  <p class="text-slate-500 text-xs">
+                    All worked examples — ZIP
+                  </p>
                 </div>
+                <span class="text-slate-600 text-sm">↓</span>
               </div>
-
-              {/* Dynamic chapter slides from Strapi */}
-              <UploadedFiles files={homePageData()?.uploadedFiles} />
-            </div>
+            </a>
+            <UploadedFiles files={homePageData()?.uploadedFiles} />
           </div>
         </div>
       </section>

@@ -815,33 +815,6 @@ export default function BookLanding() {
                 been a visiting scientist at the University of Victoria, Canada
                 and Purdue University, USA.
               </p>
-              <div class="flex flex-wrap gap-3">
-                <MagentaBtn href={TOC_PDF_URL} size="sm">
-                  Read TOC (PDF)
-                </MagentaBtn>
-                <a href={AMAZON_URL} target="_blank" rel="noopener noreferrer">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    class="text-slate-300"
-                    style="border-color: rgba(255,255,255,0.15);"
-                    onMouseEnter={(
-                      e: MouseEvent & { currentTarget: HTMLElement },
-                    ) =>
-                      (e.currentTarget.style.borderColor =
-                        "rgba(212,35,110,0.4)")
-                    }
-                    onMouseLeave={(
-                      e: MouseEvent & { currentTarget: HTMLElement },
-                    ) =>
-                      (e.currentTarget.style.borderColor =
-                        "rgba(255,255,255,0.15)")
-                    }
-                  >
-                    Buy on Amazon
-                  </Button>
-                </a>
-              </div>
             </div>
 
             {/* Right — credential chips */}

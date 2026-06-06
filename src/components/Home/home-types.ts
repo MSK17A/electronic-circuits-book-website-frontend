@@ -43,4 +43,6 @@ export interface Testimonial {
   reviewerName: string;
   reviewerTitle: string;
   rating: number;
+  source: string;
+  sourceUrl: string;
 }

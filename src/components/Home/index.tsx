@@ -12,7 +12,8 @@ import {
 import { scrollTo } from "@/components/Navbar";
 import "./styles.css";
 import UploadedFiles from "./uploaded-files";
-import { getHomepage } from "~/lib/quiries";
+import { getHomepage } from "~/components/Home/quiries";
+import { Testimonial } from "./home-types";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -267,7 +268,11 @@ export default function BookLanding() {
 
   // Pick up to 3 random testimonials from Strapi data; fall back to empty array
   const displayedTestimonials = () =>
-    pickRandom(homePageData()?.testimonials ?? [], 3);
+    pickRandom(
+      (homePageData()?.testimonials as Testimonial[]) ??
+        ([] as unknown as Testimonial),
+      3,
+    );
 
   return (
     <div

@@ -12,7 +12,7 @@ import {
 import { scrollTo } from "@/components/Navbar";
 import "./styles.css";
 import UploadedFiles from "./uploaded-files";
-import { getHomepage } from "~/components/Home/quiries";
+import { getHomepage } from "~/components/Home/home-quiries";
 import { Testimonial } from "./home-types";
 
 // ─── Constants ────────────────────────────────────────────────────────────────

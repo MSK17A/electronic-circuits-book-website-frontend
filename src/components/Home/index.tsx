@@ -413,11 +413,6 @@ export default function BookLanding() {
               </For>
             </ul>
           </div>
-          <div class="mt-8 text-center">
-            <MagentaBtn href={AMAZON_URL} class="px-10">
-              📖 Get Your Copy on Amazon
-            </MagentaBtn>
-          </div>
         </div>
       </section>
 
